@@ -30,6 +30,9 @@ def column(board, _column)
   9.times.map{|i| board[i*9+_column] }
 end
 
+def square(board, _row, _column)
+end
+
 RSpec.describe "sudoku solver" do
   describe "#row" do
     it "returns the row for the given index" do
@@ -55,4 +58,11 @@ RSpec.describe "sudoku solver" do
       expect(column(one, 9)).to eq([])
     end
   end
+
+  describe "#current_square" do
+    it "returns the current square for the given position" do
+      expect(square(one, 0, 0)).to eq([0,1,8,0,6,0,0,0,0,0,0,0,0,7,9,0])
+    end
+  end
 end
+
